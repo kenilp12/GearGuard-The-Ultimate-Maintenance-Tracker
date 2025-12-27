@@ -5,8 +5,7 @@ import './App.css'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
-import Testactivity from './component/Testactivity'
-import Equipment from './component/Equipment'
+import Testactivity from './Component/testactivity'
 
    function App() {
 
@@ -15,8 +14,7 @@ import Equipment from './component/Equipment'
       {/* // <Signin /> */}
       {/* <Signup /> */}
       {/* <Dashboard /> */}
-      {/* <Testactivity /> */}
-      <Equipment />
+      <Testactivity />
     </>
   );
 }
