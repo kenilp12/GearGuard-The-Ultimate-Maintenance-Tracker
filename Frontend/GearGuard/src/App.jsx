@@ -7,7 +7,6 @@ import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
 import Testactivity from './Component/testactivity'
 import Workunit from './component/Workunit'
-import Team from './component/Team'
 
    function App() {
 
@@ -17,8 +16,7 @@ import Team from './component/Team'
       {/* <Signup /> */}
       {/* <Dashboard /> */}
       {/* <Testactivity /> */}
-      {/* <Workunit /> */}
-      <Team />
+      <Workunit />
     </>
   );
 }
