@@ -1,5 +1,6 @@
 import express from "express";
 import userRoutes from "./routes/user.routes.js";
+import maintenanceRoutes from "./routes/maintenance.routes.js"
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 //all routes
 app.use("/api/users", userRoutes);
+app.use("/api/maintenance", maintenanceRoutes);
 
 
 
