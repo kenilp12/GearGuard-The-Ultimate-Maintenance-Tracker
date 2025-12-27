@@ -9,7 +9,6 @@ export const createRequest = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 // GET ALL REQUESTS
 export const getRequests = async (req, res) => {
   try {

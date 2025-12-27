@@ -1,31 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Signin from './pages/Signin'
-import Signup from './pages/Signup'
-import Dashboard from './pages/Dashboard'
-import Testactivity from './Component/testactivity'
-import Workunit from './component/Workunit'
-import Team from './component/Team'
-import Equipment from './component/Equipment'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import './App.css';
 
-   function App() {
-
+function App() {
   return (
-    <>
-      {/* // <Signin /> */}
-      {/* <Signup /> */}
-      {/* <Dashboard /> */}
-       {/* <Testactivity />  */}
-        {/* <Workunit />  */}
-        {/* <Team /> */}
-        <Equipment />
-    </>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
-    
-  
-
-export default App
+export default App;
